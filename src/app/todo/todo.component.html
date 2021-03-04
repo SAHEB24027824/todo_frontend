@@ -1,0 +1,14 @@
+<div class="todo_form">
+  <form [formGroup]="todoForm" class="main_form">
+  <input type="text" placeholder="Item Name" class="todo_input" formControlName="name">
+  <button *ngIf="!showUpdate" class="save_btn" (click)="saveData()">Save</button>
+  <button *ngIf="showUpdate"  class="save_btn" (click)="update()">Update</button>
+</form>
+
+<div *ngFor="let item of items" class="list">
+  <div class="name">{{item.name}}</div>
+  <button class="edit" (click)="edit(item)">Edit</button>
+  <button class="delete" (click)="delete(item._id)">Delete</button>
+</div>
+
+</div>
